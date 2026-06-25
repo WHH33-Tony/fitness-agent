@@ -1,0 +1,36 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
+
+# 环境与密钥（只保留 example 模板）
+.env
+.env.*
+!.env.example
+backend/.env
+
+# 运行时配置（管理端保存的 API Key / 讯飞凭证）
+backend/data/runtime_config.json
+
+# 本地数据库与用户数据
+backend/data/*.db
+backend/data/*.sqlite3
+*.sqlite3
+
+# 上传文件
+uploads/*
+backend/uploads/*
+!uploads/.gitkeep
+!backend/uploads/.gitkeep
+
+# 构建产物
+dist/
+frontend/dist/
+electron/dist/
+
+# 动作图缓存（运行时自动生成）
+backend/static/exercise-cache/

@@ -1,0 +1,94 @@
+:root {
+  --bg-gradient: linear-gradient(135deg, #7cb2f8 0%, #c084fc 48%, #f472b6 100%);
+  --primary: #3f6fc6;
+  --panel: rgba(255, 255, 255, 0.9);
+  --shadow: 0 14px 36px rgba(31, 41, 55, 0.12);
+  color: #1f2937;
+  font-family: Inter, "Microsoft YaHei", system-ui, sans-serif;
+  background: var(--bg-gradient);
+}
+
+body {
+  margin: 0;
+  min-width: 960px;
+}
+
+.el-main {
+  padding: 0;
+}
+
+.app-shell {
+  min-height: 100vh;
+  background: var(--bg-gradient);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  height: 68px;
+  border-bottom: 1px solid #e5e7eb;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+}
+
+.brand {
+  font-weight: 800;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+.nav {
+  flex: 1;
+  border-bottom: 0;
+  background: transparent;
+}
+
+.nav-spacer {
+  flex: 1;
+}
+
+.page {
+  width: 100%;
+  margin: 0;
+  padding: 24px 18px 40px;
+  height: calc(100vh - 68px);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.hero {
+  padding: 56px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, rgba(63, 111, 198, 0.96), rgba(91, 141, 225, 0.9));
+  color: white;
+}
+
+.panel {
+  border-radius: 2px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.page-title {
+  margin: 8px 0 24px;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.card {
+  min-height: 150px;
+}
+
+.muted {
+  color: #6b7280;
+}

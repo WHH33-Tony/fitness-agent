@@ -1,0 +1,56 @@
+{
+  "name": "fitness-coach-desktop",
+  "version": "1.0.4",
+  "private": true,
+  "main": "main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build:clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\" && electron-builder",
+    "sync:unpacked": "node scripts/sync-unpacked.cjs",
+    "repack:test": "cd ../frontend && npm run build && node ../electron/scripts/sync-unpacked.cjs",
+    "package:desktop": "cd ../frontend && npm run build && cd ../electron && node scripts/prepare-package.cjs && node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\" && electron-builder && node scripts/print-output.cjs"
+  },
+  "devDependencies": {
+    "electron": "^32.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "com.fitness.coach",
+    "productName": "FitnessCoach",
+    "npmRebuild": false,
+    "win": {
+      "target": "nsis",
+      "signAndEditExecutable": false
+    },
+    "files": [
+      "main.cjs",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "../frontend/dist",
+        "to": "frontend/dist",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "../backend",
+        "to": "backend",
+        "filter": [
+          "**/*",
+          "!**/__pycache__/**",
+          "!**/*.pyc",
+          "!**/*.pyo",
+          "!**/.vscode/**",
+          "!**/.env",
+          "!**/db/**",
+          "!**/test_*.sqlite3",
+          "!**/.git/**"
+        ]
+      }
+    ]
+  }
+}
+
