@@ -63,10 +63,3 @@ npm run start
 - 进程内缓存：`REDIS_URL=memory://local`
 
 首次启动会自动创建表并写入基础数据（管理员 `admin/123456`）。
-
-## 敏感信息（勿提交 Git）
-
-1. 复制 `backend/.env.example` 为 `backend/.env` 后本地填写
-2. 可选配置：`DASHSCOPE_API_KEY`（百炼/通义千问）、讯飞 `XFYUN_*`（语音）
-3. 或在应用内「管理控制台 → 系统设置」填写
-4. **切勿**将 `.env`、`backend/data/runtime_config.json`、本地数据库提交到仓库
